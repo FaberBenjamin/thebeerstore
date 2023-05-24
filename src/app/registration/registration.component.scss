@@ -1,0 +1,88 @@
+@import '../../styles/function';
+@import '../../styles/mixins';
+
+.form-container {
+  margin: 5rem auto 5rem auto;
+  padding: 2rem 0;
+  background-color: getColor(gray, 200);
+  filter: drop-shadow(30px 10px 4px getColor(gray, 300));
+  width: max-content;
+
+  form {
+    .flex-container {
+      display: flex;
+      justify-content: center;
+      gap: 5rem;
+      width: 50vw;
+
+      div div {
+        display: flex;
+        flex-direction: column;
+        width: min-content;
+      }
+
+      &_adress-container {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    input {
+      @include custom-input(black, 5px, 0.5rem, 16px, 10rem);
+    }
+
+    span {
+      color: getColor(red, 200);
+      font-weight: bold;
+      display: block;
+    }
+
+    button {
+      display: block;
+      margin: 2rem auto auto;
+      @include custom-button(15px, white, black, black, 16px, 0.5rem 1rem);
+    }
+
+    button:hover {
+      @include custom-button(15px, black, white, black, 16px, 0.5rem 1rem);
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+}
+
+// MediaQueries
+
+@media only screen and (max-width: 1200px) {
+  .form-container {
+    margin: 2rem auto auto;
+    padding: 5vw 5vw;
+
+    form {
+      .flex-container {
+        display: flex;
+        width: 70vw;
+        margin: auto;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .form-container {
+    margin: 2rem auto auto;
+    padding: 5vw 5vw;
+    gap: 2rem;
+
+    form {
+      .flex-container {
+        display: flex;
+        flex-direction: column;
+        width: 70vw;
+        margin: auto;
+        align-items: center;
+      }
+    }
+  }
+}

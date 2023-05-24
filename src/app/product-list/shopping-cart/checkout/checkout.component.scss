@@ -1,0 +1,102 @@
+@import '../../../../styles/function';
+@import '../../../../styles/mixins';
+
+.order-portal {
+  @include custom-portal();
+
+  &_card {
+    @include custom-portal-card(30vw);
+  }
+
+  button {
+    @include custom-button(8px, getColor(green, 100), black, getColor(green, 200), 16px, 0.5rem 1rem);
+    font-weight: bold;
+  }
+
+  button:hover {
+    background-color: getColor(green, 200);
+    color: white;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+
+  img {
+    width: 75px;
+  }
+}
+
+.checkout-container {
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  h2 {
+    font-weight: bold;
+    margin-bottom: 3rem;
+  }
+
+  h3 {
+    font-weight: 100;
+  }
+
+  &__item-container {
+    width: 50vw;
+    display: grid;
+    margin: auto;
+    grid-template-columns: 33% 33% 33%;
+    text-align: center;
+
+    h3 {
+      margin: 0.1rem;
+    }
+  }
+
+  &__total-container {
+    width: 50vw;
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem auto auto;
+    border-top: 2px solid black;
+  }
+
+  &__billing-adress {
+    width: max-content;
+    padding: 3rem;
+    margin: auto auto 2rem auto;
+    background-color: getColor(brown, 100);
+    border-radius: 10px;
+
+    button {
+      display: block;
+      margin: 1rem auto auto;
+      @include custom-button(15px, white, black, black, 16px, 0.5rem 1rem);
+    }
+
+    button:hover {
+      background-color: black;
+      color: white;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .checkout-container {
+    &__item-container {
+      width: 90vw;
+    }
+
+    &__billing-adress {
+      width: 80vw;
+      padding: 1rem;
+    }
+  }
+
+  .order-portal {
+    &_card {
+      width: 80vw;
+    }
+  }
+}

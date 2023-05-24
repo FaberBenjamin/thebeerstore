@@ -1,0 +1,44 @@
+<div class="block-portal" *ngIf="showBlockPortal">
+  <div class="block-portal_card">
+    <h1>You must be logged in to view your shopping cart, or add items to it!</h1>
+    <button (click)="showBlockPortal = false">Okay</button>
+  </div>
+</div>
+
+<div [ngClass]="{ 'sold-out-wrapper': !onStock }" class="product-wrapper">
+  <div class="product-container">
+    <div class="product-container__img-container">
+      <img src="{{ url }}" alt="product_image" />
+      <div
+        [ngClass]="{
+          'product-container__price-generic': !isDiscounted && !isNovelty,
+          'product-container__price-discounter': isDiscounted,
+          'product-container__price-novelty': isNovelty
+        }"
+      >
+        {{ price }}ft
+      </div>
+    </div>
+    <div>
+      <div class="banner-container">
+        <p class="banner">Premium</p>
+        <p class="novelty-banner" *ngIf="isNovelty">Novelty</p>
+        <p class="discounted-banner" *ngIf="isDiscounted">Discounted</p>
+      </div>
+
+      <h1>{{ title }}</h1>
+      <p>{{ subCategory }}</p>
+      <button class="product-container_detail-button" [routerLink]="['/products', id]">View more details</button>
+    </div>
+  </div>
+
+  <div class="button-container" *ngIf="onStock">
+    <button class="button-container_add-button" (click)="onActivateCart()">
+      <img src="https://cdn-icons-png.flaticon.com/512/4153/4153710.png" alt="illustration_shopping_cart" />
+      <p>Add to shoppingcart</p>
+    </button>
+  </div>
+  <div class="button-container" *ngIf="!onStock">
+    <h2>Sold out!</h2>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+@mixin custom-button($radius, $background-color, $color, $border-color, $font-size, $padding) {
+  border-radius: $radius;
+  border: 2px solid $border-color;
+  background-color: $background-color;
+  color: $color;
+  font-size: $font-size;
+  padding: $padding;
+}
+
+@mixin custom-input($border-color, $border-radius, $padding, $font-size, $width) {
+  border: 2px solid $border-color;
+  border-radius: $border-radius;
+  padding: $padding;
+  font-size: $font-size;
+  width: $width;
+}
+
+@mixin custom-select($border-color, $border-radius, $padding, $font-size, $width) {
+  border: 2px solid $border-color;
+  border-radius: $border-radius;
+  padding: $padding;
+  font-size: $font-size;
+  width: $width;
+}
+
+@mixin custom-price($color) {
+  position: absolute;
+  background-color: $color;
+  bottom: 0;
+  left: 4rem;
+  padding: 1rem;
+  border-radius: 160px;
+  font-weight: bold;
+}
+
+@mixin custom-banner($color) {
+  font-weight: bold;
+  background-color: $color;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+@mixin custom-portal() {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: getColor(gray, 200OP);
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  z-index: 1000;
+}
+
+@mixin custom-portal-card($width) {
+  background-color: white;
+  width: $width;
+  max-width: 90vw;
+  margin: auto;
+  text-align: center;
+  border-radius: 10px;
+  padding: 2rem;
+}

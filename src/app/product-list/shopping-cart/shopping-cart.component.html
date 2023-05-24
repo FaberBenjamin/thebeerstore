@@ -1,0 +1,19 @@
+<app-loader></app-loader>
+<div class="shopping-cart-container">
+  <div class="cartItem-container" *ngFor="let cartItem of shoppingCartItems">
+    <div class="cartItem-container_img-wrapper">
+      <img src="{{ cartItem.url }}" alt="" />
+    </div>
+    <p>**{{ cartItem.title | uppercase }}**</p>
+    <div class="cartItem-container__amount-container">
+      <button (click)="descreaseCartItemAmount(cartItem.id, cartItem.price)">-</button>
+      <p>{{ cartItem.amount }}</p>
+      <button (click)="increaseCartItemAmount(cartItem.id, cartItem.price)">+</button>
+    </div>
+    <p>**{{ cartItem.amount! * cartItem.price! }}ft**</p>
+  </div>
+  <div class="shopping-cart-container__footer">
+    <h1>Total: {{ totalBill }}ft</h1>
+    <button [routerLink]="['checkout']">Checkout</button>
+  </div>
+</div>

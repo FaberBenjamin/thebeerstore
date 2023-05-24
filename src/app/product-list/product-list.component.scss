@@ -1,0 +1,237 @@
+@import '../../styles/function';
+@import '../../styles/mixins';
+
+.body-layer {
+  @include custom-portal();
+
+  .cart-form {
+    @include custom-portal-card(30vw);
+
+    h2 {
+      color: getColor(red, 200);
+    }
+
+    img {
+      margin-top: 2rem;
+      width: 75px;
+    }
+
+    input {
+      height: 2rem;
+      width: 5rem;
+    }
+
+    span {
+      color: getColor(gray, 200);
+    }
+
+    &_button-container {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 3rem;
+      margin-bottom: 2rem;
+
+      &_accept {
+        @include custom-button(8px, getColor(green, 100), black, getColor(green, 200), 16px, 0.5rem 1rem);
+        font-weight: bold;
+      }
+      &_accept:hover {
+        background-color: getColor(green, 200);
+        color: white;
+        transition: 0.2s;
+        cursor: pointer;
+      }
+      &_decline {
+        @include custom-button(8px, getColor(red, 100), black, getColor(red, 200), 16px, 0.5rem 1rem);
+        font-weight: bold;
+      }
+      &_decline:hover {
+        background-color: getColor(red, 200);
+        color: white;
+        transition: 0.2s;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.page-title {
+  text-align: center;
+}
+
+.product-filter-navbar {
+  width: 90vw;
+  margin: auto;
+
+  &__upper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 5rem;
+    min-height: 5rem;
+    gap: 3rem;
+    border-top: 2px solid getColor(gray, 200);
+    border-bottom: 2px solid getColor(gray, 200);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+
+    &_toogle {
+      position: absolute;
+      width: 35px;
+      right: 7.5vw;
+    }
+
+    &_toogle:hover {
+      cursor: pointer;
+    }
+
+    &_form {
+      display: flex;
+      gap: 1rem;
+
+      input {
+        @include custom-input(black, 10px, 0.5rem, 16px, 12rem);
+      }
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
+
+      img:hover {
+        cursor: pointer;
+      }
+    }
+
+    select {
+      @include custom-select(black, 5px, 0.5rem, 16px, 'max-content');
+    }
+  }
+
+  &__lower {
+    display: flex;
+    justify-content: center;
+    min-height: 4rem;
+    background-color: getColor(gray, 100);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    form {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+
+      select {
+        @include custom-select(black, 5px, 0.5rem, 16px, 'max-content');
+      }
+
+      button {
+        @include custom-button(15px, white, black, black, 16px, 0.5rem 1rem);
+        font-weight: bold;
+      }
+
+      button:hover {
+        background-color: getColor(gray, 200);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: 23% 23% 23% 23%;
+  grid-template-rows: 50% 50%;
+  justify-content: space-evenly;
+  gap: 2%;
+  text-align: center;
+  width: 90vw;
+  margin: 1rem auto auto;
+}
+
+.no_result {
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  gap: 0.5rem;
+  margin: 2rem 0 1rem 0;
+  justify-content: center;
+
+  &__page-number-container {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__page-number {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  &_arrow-button {
+    background-color: transparent;
+    border: none;
+  }
+
+  &_arrow-button img {
+    width: 15px;
+  }
+
+  &_arrow-button img:hover {
+    cursor: pointer;
+  }
+}
+
+// MediaQueries
+
+@media only screen and (max-width: 1200px) {
+  .products-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 1rem;
+  }
+
+  .product-filter-navbar {
+    &__upper {
+      padding-left: 0;
+      display: flex;
+      gap: 1rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .products-container {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 1rem;
+  }
+
+  .product-filter-navbar {
+    &__upper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 0 1rem 0;
+
+      &_toogle {
+        top: 50%;
+        bottom: 50%;
+        margin: auto;
+      }
+    }
+
+    &__lower {
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: normal;
+        padding: 1rem 0 1rem 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,123 @@
+<app-loader></app-loader>
+
+<div *ngIf="showAddForm" class="body-layer">
+  <div [@addProductAnimation]="animationState" class="cart-form">
+    <img src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="illustration_shopping_cart" />
+    <p>You selected:</p>
+    <h1>{{ selectedProduct.title }}</h1>
+    <h2 *ngIf="showAmountError">Please enter only numbers greater than 0!</h2>
+    <p>Please, enter how many items you would like to add to you cart:</p>
+    <form [formGroup]="amountForm" action="" (ngSubmit)="addProductToCart(selectedProduct.id)">
+      <input formControlName="amount" min="1" type="number" />
+      <span>1pic/{{ selectedProduct.price }}ft</span>
+      <div class="cart-form_button-container">
+        <button class="cart-form_button-container_decline" (click)="handleBackStep()">Back</button>
+        <button class="cart-form_button-container_accept" type="submit">Enter</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!--  -->
+
+<h1 class="page-title">PRODUCTS</h1>
+<div class="product-filter-navbar">
+  <div class="product-filter-navbar__upper">
+    <form class="product-filter-navbar__upper_form" [formGroup]="searchForm">
+      <input formControlName="searchInput" placeholder="Search for item name" type="text" />
+      <img
+        (click)="onSearch()"
+        src="https://cdn-icons-png.flaticon.com/512/711/711319.png"
+        alt="illustration_magnifier"
+      />
+    </form>
+    <div>
+      <label for="rangeSelect">Sort by price: </label>
+      <select (change)="onRangeFilter($event)" [(ngModel)]="rangeSelect" name="rangeSelect" id="rangeSelect">
+        <option value="relevance">Relevance</option>
+        <option value="increasing">Increasing</option>
+        <option value="decrasing">Decreasing</option>
+      </select>
+    </div>
+    <img
+      class="product-filter-navbar__upper_toogle"
+      (click)="toogleAdvancedMenu()"
+      src="https://cdn-icons-png.flaticon.com/512/3839/3839020.png "
+      alt="hamburger_menu_for_navbar_toogle"
+    />
+  </div>
+
+  <!--  -->
+
+  <div class="product-filter-navbar__lower" *ngIf="advancedIsOpen">
+    <form [formGroup]="advancedForm" (ngSubmit)="onSubmit()">
+      <label for="mainCategory">Select a category:</label>
+      <select formControlName="mainCategory" (change)="handleSubcategory()" name="mainCategory" id="mainCategory">
+        <option value="any">Any</option>
+        <option *ngFor="let option of mainCategories" value="{{ option }}">{{ option }}</option>
+      </select>
+      <div *ngIf="this.advancedForm.get('mainCategory')?.value !== 'any'">
+        <label for="subCategory">Select subcategory:</label>
+        <select formControlName="subCategory" name="subCategory" id="subCategory">
+          <option value="any">Any</option>
+          <option *ngFor="let option of subCategories" value="{{ option }}">{{ option }}</option>
+        </select>
+      </div>
+      <label for="originCountry">Select a country:</label>
+      <select formControlName="originCountry" name="originCountry" id="originCountry">
+        <option value="any">Any</option>
+        <option *ngFor="let option of originCountries" value="{{ option }}">{{ option }}</option>
+      </select>
+      <label for="available">Show products only available?</label>
+      <input formControlName="onStock" type="checkbox" name="available" id="available" />
+      <button type="submit">Advanced search!</button>
+    </form>
+  </div>
+</div>
+
+<!--  -->
+
+<div *ngIf="filteredProducts.length !== 0" class="products-container">
+  <div *ngFor="let product of filteredProducts | slice : (page - 1) * pageSize : page * pageSize">
+    <app-product-item
+      [title]="product.title"
+      [description]="product.description"
+      [id]="product.id"
+      [price]="product.price"
+      [originCountry]="product.originCountry"
+      [mainCategory]="product.mainCategory"
+      [subCategory]="product.subCategory"
+      [onStock]="product.onStock"
+      [url]="product.url"
+      [isNovelty]="product.isNovelty"
+      [isDiscounted]="product.isDiscounted"
+      (activateCart)="onActivateCartForm(product.id)"
+    ></app-product-item>
+  </div>
+</div>
+
+<div class="no_result" *ngIf="filteredProducts.length === 0">
+  <h1>No results!</h1>
+</div>
+
+<!--  -->
+
+<div class="button-container">
+  <button class="button-container_arrow-button" [disabled]="page === 1" (click)="page = page - 1">
+    <img src="https://cdn-icons-png.flaticon.com/512/2722/2722991.png " alt="pagination_arrow_back" />
+  </button>
+  <div class="button-container__page-number-container">
+    <div *ngFor="let pageNumber of pages">
+      <button class="button-container__page-number" [disabled]="page === pageNumber" (click)="page = pageNumber">
+        {{ pageNumber }}
+      </button>
+    </div>
+  </div>
+  <button
+    class="button-container_arrow-button"
+    [disabled]="filteredProducts.length <= pageSize * page"
+    (click)="page = page + 1"
+  >
+    <img src="https://cdn-icons-png.flaticon.com/512/2989/2989988.png" alt="pagination_arrow_forward" />
+  </button>
+</div>

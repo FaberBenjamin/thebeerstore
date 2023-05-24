@@ -1,0 +1,47 @@
+<app-loader></app-loader>
+
+<div class="block-portal" *ngIf="showBlockPortal">
+  <div class="block-portal_card">
+    <h1>You must be logged in to view your shopping cart, or add items to it!</h1>
+    <button (click)="showBlockPortal = false" [routerLink]="['/']">Okay</button>
+  </div>
+</div>
+
+<div class="navbar_container__main">
+  <div class="navbar_container_collapse">
+    <h1>Navbar</h1>
+    <img
+      (click)="collapseNavbar()"
+      src="https://cdn-icons-png.flaticon.com/512/9091/9091429.png"
+      alt="navbar_container_collapse_icon"
+    />
+  </div>
+  <div class="navbar_container_upper" [ngClass]="{ collapsed: isNavbarCollapsed }">
+    <div class="navbar_container_upper__pages">
+      <h2 [routerLink]="['/']">Home</h2>
+      <h2 (click)="navToSpecialty()">Specialty</h2>
+      <h2 [routerLink]="['/products']">Products</h2>
+      <h2 (click)="navToContact()">Contact</h2>
+    </div>
+    <ng-container>
+      <div class="navbar_container_upper__button-container" *ngIf="!isUserLoggedIn; else loggedIn">
+        <button [routerLink]="['/login']">Login</button>
+        <button [routerLink]="['/registration']">Register</button>
+      </div>
+    </ng-container>
+    <ng-template #loggedIn>
+      <div class="navbar_container_upper__button-container">
+        <button *ngIf="isUserAdmin" [routerLink]="['/admin']">Admin</button>
+        <h2 *ngIf="!isUserAdmin">Welcome {{ username }}</h2>
+        <button (click)="handleLogout()">Logout</button>
+      </div>
+    </ng-template>
+  </div>
+  <div class="navbar_container__lower">
+    <h1 class="navbar_logo">The Beerstore</h1>
+    <div (click)="navigateToCart()" class="navbar_shopping-cart">
+      <img src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="shopping_cart_icon" />
+      <div class="navbar_shopping-cart_amount">{{ cartService.sumAmount$ | async }}</div>
+    </div>
+  </div>
+</div>

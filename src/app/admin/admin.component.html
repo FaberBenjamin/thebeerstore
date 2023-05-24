@@ -1,0 +1,179 @@
+<app-loader></app-loader>
+
+<div *ngIf="deleteProductToogle" class="delete-portal">
+  <div class="card-container">
+    <h1>Delete product?</h1>
+    <div class="button-container">
+      <button class="button-container_no" (click)="deleteProductToogle = false">No</button>
+      <button class="button-container_yes" (click)="deleteProduct()">Yes</button>
+    </div>
+  </div>
+</div>
+
+<div class="table-wrapper">
+  <div class="search-container">
+    <form [formGroup]="searchForm">
+      <input formControlName="searchInput" placeholder="Search for item name" type="text" id="searchInput" />
+      <img
+        (click)="onSearch()"
+        src="https://cdn-icons-png.flaticon.com/512/711/711319.png"
+        alt="illustration_magnifier"
+      />
+    </form>
+    <button (click)="onAddActivator()">New product</button>
+  </div>
+
+  <table>
+    <tr class="table-header">
+      <td>Name</td>
+      <td>Cost</td>
+      <td>Description</td>
+      <td>Category (main)</td>
+      <td>Category (sub)</td>
+      <td>OriginCountry</td>
+      <td>Stock</td>
+      <td>Options</td>
+    </tr>
+    <tr class="table-products" *ngFor="let product of filteredProducts">
+      <td>{{ product.title }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.description | slice : 0 : 15 }}...</td>
+      <td>{{ product.mainCategory }}</td>
+      <td>{{ product.subCategory }}</td>
+      <td>{{ product.originCountry }}</td>
+      <td>{{ product.onStock }}</td>
+      <td class="button-container">
+        <button class="button-container_modify-button" (click)="onModify(product.id)">Modify</button>
+        <button class="button-container_delete-button" (click)="onDeleteActivator(product.id)">Delete</button>
+      </td>
+    </tr>
+  </table>
+
+  <!--  -->
+
+  <div>
+    <div *ngIf="productModifyToogle" class="modification-container">
+      <form [formGroup]="modificationForm" action="" (ngSubmit)="onModifyProduct()">
+        <div class="modification-container_img-container">
+          <img src="{{ productToModify.url }}" alt="choosen_product_image" />
+          <div>
+            <label for="productToModifyUrl">url: </label>
+            <input
+              formControlName="imgUrl"
+              placeholder="{{ productToModify.url }}"
+              type="text"
+              id="productToModifyUrl"
+            />
+          </div>
+        </div>
+        <div class="modification-container_input-container">
+          <label for="productToModifyTitle">Name: {{ productToModify.title }}</label>
+          <input
+            formControlName="title"
+            type="text"
+            placeholder="{{ productToModify.title }}"
+            id="productToModifyTitle"
+          />
+        </div>
+        <div class="modification-container_input-container">
+          <label for="productToModifyPrice">Cost: {{ productToModify.price }}</label>
+          <input
+            formControlName="price"
+            type="text"
+            placeholder="{{ productToModify.price }}"
+            id="productToModifyPrice"
+          />
+        </div>
+        <div class="modification-container_input-container description-input">
+          <label for="productToModifyDescription">Description: {{ productToModify.description }}</label>
+          <textarea
+            formControlName="description"
+            id="productToModifyDescription"
+            rows="5"
+            cols="40"
+            placeholder="{{ productToModify.description }}"
+          ></textarea>
+        </div>
+
+        <div class="modification-container_input-container">
+          <label for="productToModifyMainCategory">MainCategory: {{ productToModify.mainCategory }}</label>
+          <input
+            formControlName="mainCategory"
+            type="text"
+            placeholder="{{ productToModify.mainCategory }}"
+            id="productToModifyMainCategory"
+          />
+        </div>
+        <div class="modification-container_input-container">
+          <label for="productToModifySubCategory">SubCategory: {{ productToModify.subCategory }}</label>
+          <input
+            formControlName="subCategory"
+            type="text"
+            placeholder="{{ productToModify.subCategory }}"
+            id="productToModifySubCategory"
+          />
+        </div>
+        <div class="modification-container_input-container">
+          <label for="productToModifyOriginCountry">From: {{ productToModify.originCountry }}</label>
+          <input
+            formControlName="originCountry"
+            type="text"
+            placeholder="{{ productToModify.originCountry }}"
+            id="productToModifyOriginCountry"
+          />
+        </div>
+        <div class="modification-container_input-container">
+          <label for="productToModifyAvailability">Stock: {{ productToModify.onStock }}</label>
+          <select formControlName="onStock" id="productToModifyAvailability">
+            <option value="true">True</option>
+            <option value="false">False</option>
+          </select>
+        </div>
+        <div class="modification-container_input-container">
+          <label for="discount">Would you like to present a discounted label?</label>
+          <select formControlName="isDiscounted" id="discount">
+            <option value="true">True</option>
+            <option value="false">False</option>
+          </select>
+        </div>
+        <button type="submit">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <!--  -->
+
+  <div *ngIf="addNewProductToogle" class="modification-container">
+    <form [formGroup]="addProductForm" action="" (ngSubmit)="onAddProduct()">
+      <label for="newTitle">Title</label>
+      <input formControlName="title" type="text" id="newTitle" />
+      <label for="newPrice">Price</label>
+      <input formControlName="price" type="number" id="newPrice" min="1" />
+      <label for="newDescription">Description</label>
+      <textarea formControlName="description" id="newDescription" cols="30" rows="10"></textarea>
+      <label for="newMaincategory">Maincategory</label>
+      <input formControlName="maincategory" type="text" id="newMaincategory" />
+      <label for="newSubcategory">Subcategory</label>
+      <input formControlName="subcategory" type="text" id="newSubcategory" />
+      <label for="newOriginCountry">Origin country</label>
+      <input formControlName="origincountry" type="text" id="newOriginCountry" />
+      <label for="newUrl">Url for image</label>
+      <input formControlName="url" type="text" id="newUrl" />
+      <div class="modification-container_select-container">
+        <label for="available">Product is available?</label>
+        <select formControlName="onstock" id="available">
+          <option value="true">True</option>
+          <option value="false">False</option>
+        </select>
+      </div>
+      <div class="modification-container_select-container">
+        <label for="novelty">Show novelty banner?</label>
+        <select formControlName="isnovelty" id="novelty">
+          <option value="true">True</option>
+          <option value="false">False</option>
+        </select>
+      </div>
+      <button type="submit">Add</button>
+    </form>
+  </div>
+</div>

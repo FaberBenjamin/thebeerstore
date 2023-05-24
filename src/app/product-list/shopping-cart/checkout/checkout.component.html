@@ -1,0 +1,30 @@
+<app-loader></app-loader>
+
+<div class="order-portal" *ngIf="showOrderSuccess">
+  <div class="order-portal_card">
+    <img src="https://cdn-icons-png.flaticon.com/512/709/709510.png" alt="tick_image" />
+    <h1>Your order was successful! Thank you!</h1>
+    <button (click)="activateLink()">Okay</button>
+  </div>
+</div>
+
+<div class="checkout-container">
+  <h1>Checkout</h1>
+  <h2>Review your order:</h2>
+  <div class="checkout-container__item-container" *ngFor="let item of checkoutItems">
+    <h3>**{{ item.title }}</h3>
+    <h3>{{ item.amount }} pieces</h3>
+    <h3>{{ item.price * item.amount! }} HUF**</h3>
+  </div>
+  <div class="checkout-container__total-container">
+    <h3>Total:</h3>
+    <h3>{{ totalBill }} HUF</h3>
+  </div>
+  <div class="checkout-container__billing-adress">
+    <h2>Billing Data</h2>
+    <h3>Full name: {{ userData.fullname | uppercase }}</h3>
+    <h3>Contact email: {{ userData.email | uppercase }}</h3>
+    <h3>Adress: {{ userData.zipcode }}, {{ userData.city | uppercase }} {{ userData.adress | uppercase }}</h3>
+    <button (click)="forwardOrder()">Place order</button>
+  </div>
+</div>

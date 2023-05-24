@@ -1,0 +1,6 @@
+@import "./colors";
+
+@function getColor($color, $weight) {
+    @return map-get(map-get($colors, $color), $weight);
+}
+

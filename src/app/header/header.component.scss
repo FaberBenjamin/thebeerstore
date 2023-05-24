@@ -1,0 +1,166 @@
+@import '../../styles/function';
+@import '../../styles/mixins';
+
+.block-portal {
+  @include custom-portal();
+
+  &_card {
+    @include custom-portal-card(30vw);
+  }
+
+  button {
+    @include custom-button(8px, getColor(green, 100), black, getColor(green, 200), 16px, 0.5rem 1rem);
+    font-weight: bold;
+  }
+
+  button:hover {
+    background-color: getColor(green, 200);
+    color: white;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+}
+
+.navbar_container {
+  &__main {
+    display: flex;
+    flex-direction: column;
+    min-width: 100vw;
+  }
+
+  &_upper {
+    background-color: getColor(blue, 500);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &__pages {
+      display: flex;
+
+      h2 {
+        padding: 1rem 1rem;
+      }
+
+      h2:hover {
+        cursor: pointer;
+        background-color: getColor(blue, 100);
+        font-weight: bold;
+      }
+    }
+
+    &__button-container {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      h2 {
+        margin-right: 2rem;
+      }
+
+      button {
+        @include custom-button(15px, white, black, black, 16px, 0.5rem 1rem);
+        font-weight: bold;
+      }
+      button:hover {
+        background-color: black;
+        color: white;
+        transition: 0.2s;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__lower {
+    background-color: getColor(blue, 200);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+
+    img:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.navbar_shopping-cart {
+  position: relative;
+
+  img {
+    width: 40px;
+  }
+
+  &_amount {
+    position: absolute;
+    background-color: #f96f6f;
+    padding: 0.2rem;
+    border-radius: 90%;
+    top: -6px;
+    right: -10px;
+    font-size: 12px;
+    color: black;
+    width: 15px;
+    text-align: center;
+  }
+}
+
+.collapsed {
+  display: none;
+}
+
+.opened {
+  display: flex;
+}
+
+// MediaQueries
+
+@media only screen and (min-width: 601px) {
+  .navbar_container {
+    &_collapse {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .block-portal {
+    &_card {
+      width: 60vw;
+      font-size: 11px;
+    }
+  }
+
+  .navbar_container {
+    &_collapse {
+      background-color: getColor(blue, 300);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem 0 2rem;
+
+      img {
+        width: 30px;
+      }
+    }
+    &_upper {
+      justify-content: space-between;
+
+      &__pages {
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+          padding-left: 2rem;
+        }
+      }
+
+      &__button-container {
+        display: flex;
+        flex-direction: column;
+        padding-right: 2rem;
+      }
+    }
+  }
+}

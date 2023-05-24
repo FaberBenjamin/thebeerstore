@@ -1,0 +1,47 @@
+<app-loader></app-loader>
+<div class="form-container">
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" action="">
+    <div class="flex-container">
+      <div>
+        <div>
+          <label for="username">Username</label>
+          <span *ngIf="usernameIsRequired"> Username is required! </span>
+          <input formControlName="username" type="text" name="username" id="username" />
+        </div>
+        <div>
+          <label for="fullname">Full name</label>
+          <span *ngIf="fullnameIsRequired"> Name is required!</span>
+          <input formControlName="fullName" type="text" name="fullname" id="fullname" />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <span *ngIf="emailIsRequired"> Please enter a valid email! </span>
+          <input formControlName="email" type="email" name="email" id="email" />
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <span *ngIf="customErrors.length > 0 && customErrors.length === 1">
+            Password must contain at least one {{ customErrors[0] }}
+          </span>
+          <span *ngIf="customErrors.length > 0 && customErrors.length === 2">
+            Password must contain at least one {{ customErrors[0] }} and {{ customErrors[1] }}
+          </span>
+          <span *ngIf="passwordIsRequired"> Password is required! </span>
+          <input formControlName="password" type="password" name="password" id="password" />
+        </div>
+      </div>
+      <div class="flex-container_adress-container">
+        <label for="city">City</label>
+        <span *ngIf="cityIsRequired"> City is required!</span>
+        <input formControlName="city" type="text" name="city" id="city" />
+        <label for="postcode">Postal code</label>
+        <span *ngIf="postCodeIsRequired"> Postalcode is required!</span>
+        <input formControlName="postcode" type="text" name="postcode" id="postcode" />
+        <label for="adress">Adress</label>
+        <span *ngIf="adressIsRequired"> Adress is required!</span>
+        <input formControlName="adress" type="text" name="adress" id="adress" />
+      </div>
+    </div>
+    <button type="submit">Register</button>
+  </form>
+</div>

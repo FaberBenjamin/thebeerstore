@@ -1,0 +1,194 @@
+@import '../../styles/function';
+@import '../../styles/mixins';
+
+.delete-portal {
+  @include custom-portal();
+
+  .card-container {
+    @include custom-portal-card(auto);
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 1px;
+
+      &_yes {
+        @include custom-button(8px, getColor(green, 100), black, getColor(green, 200), 16px, 0.5rem 1rem);
+        font-weight: bold;
+      }
+
+      &_yes:hover {
+        background-color: getColor(green, 200);
+        color: white;
+        transition: 0.2s;
+        cursor: pointer;
+      }
+
+      &_no {
+        @include custom-button(8px, getColor(red, 100), black, getColor(red, 200), 16px, 0.5rem 1rem);
+        font-weight: bold;
+      }
+
+      &_no:hover {
+        background-color: getColor(red, 200);
+        color: white;
+        transition: 0.2s;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.table-wrapper {
+  width: max-content;
+  margin: auto;
+}
+
+table {
+  overflow-x: scroll;
+  max-width: 100vw;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  max-height: 200px;
+  overflow-y: scroll;
+  display: block;
+  td {
+    padding: 0.2rem 2rem;
+    border-bottom: 1px solid getColor(gray, 100);
+  }
+}
+
+.search-container {
+  margin: 2rem 2rem 2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+
+  form {
+    display: flex;
+    gap: 1rem;
+  }
+
+  input {
+    @include custom-input(black, 10px, 0.5rem, 16px, 12rem);
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+
+  img:hover {
+    cursor: pointer;
+  }
+
+  button {
+    @include custom-button(5px, getColor(green, 100), black, getColor(green, 200), 14px, 0.2rem);
+  }
+
+  button:hover {
+    background-color: getColor(green, 200);
+    cursor: pointer;
+  }
+}
+
+.table-header {
+  background-color: getColor(blue, 100);
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+
+  &_modify-button {
+    @include custom-button(5px, getColor(yellow, 100), black, getColor(yellow, 200), 14px, 0.2rem);
+  }
+
+  &_modify-button:hover {
+    background-color: getColor(yellow, 200);
+    cursor: pointer;
+  }
+
+  &_delete-button {
+    @include custom-button(5px, getColor(red, 100), black, getColor(red, 200), 14px, 0.2rem);
+  }
+
+  &_delete-button:hover {
+    background-color: getColor(red, 200);
+    cursor: pointer;
+  }
+}
+
+.modification-container {
+  margin: 2rem auto 2rem auto;
+  padding: 2rem;
+  border-right: 2px solid getColor(gray, 200);
+  border-bottom: 2px solid getColor(gray, 200);
+  border-bottom-right-radius: 15px;
+  max-width: 40vw;
+  background-color: white;
+  filter: drop-shadow(10px 5px 2px getColor(gray, 300));
+
+  &_img-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    img {
+      width: 100px;
+    }
+  }
+
+  &_select-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    button {
+      width: 50px;
+      margin: 2rem auto auto;
+      @include custom-button(5px, getColor(green, 100), black, getColor(green, 200), 14px, 0.2rem);
+    }
+
+    button:hover {
+      background-color: getColor(green, 200);
+      cursor: pointer;
+    }
+  }
+
+  &_input-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid getColor(gray, 100);
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .description-input {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0 1rem 0;
+  }
+
+  .search-container {
+    margin: 2rem 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100vw;
+  }
+
+  .modification-container {
+    max-width: 90vw;
+    padding: 0 0 1rem 0;
+  }
+}

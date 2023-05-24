@@ -1,0 +1,212 @@
+{
+  "items": [
+    {
+      "id": "9e683df8-ebc4-11ed-a05b-0242ac120003oo",
+      "title": "Löwenbrau",
+      "price": "349",
+      "originCountry": "Germany",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "subCategory": "Lager",
+      "onStock": true,
+      "mainCategory": "Beer",
+      "url": "https://secure.ce-tescoassets.com/assets/HU/067/5998817525067/ShotType1_540x540.jpg"
+    },
+    {
+      "id": "9e684bf8-ebc4-11ed-a05b-0242ac120003nn",
+      "title": "Soproni Klasszikus",
+      "price": "379",
+      "originCountry": "Hungary",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "subCategory": "Lager",
+      "onStock": true,
+      "mainCategory": "Beer",
+      "url": "https://soproni.hu/api/uploads/cache/soproni/termekek/282x600_klasszikus_new.png"
+    },
+    {
+      "id": "a8102348-ebc4-11ed-a05b-0242ac120003mm",
+      "title": "Heineken",
+      "price": 399,
+      "originCountry": "Germany",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "subCategory": "Lager",
+      "onStock": false,
+      "mainCategory": "Beer",
+      "url": "https://italdepo.hu/wp-content/uploads/2020/02/italdepo_155_155_heineken_05l-600x600.jpg"
+    },
+    {
+      "id": "b16b34dc-ebc4-11ed-a05b-0242ac120003ll",
+      "title": "BB Rosé",
+      "price": 1099,
+      "originCountry": "Hungary",
+      "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
+      "subCategory": "Rose",
+      "onStock": true,
+      "mainCategory": "Wine",
+      "url": "https://secure.ce-tescoassets.com/assets/HU/557/5998813123557/ShotType1_540x540.jpg"
+    },
+    {
+      "id": "b6e9a25e-ebc4-11ed-a05b-0242ac120003kk",
+      "title": "Royal Vodka",
+      "price": 2099,
+      "originCountry": "Russia",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "subCategory": "Vodka",
+      "onStock": true,
+      "mainCategory": "Spirit",
+      "url": "https://p1.akcdn.net/full/381012819.royal-vodka-1l.jpg"
+    },
+    {
+      "id": "bf27c068-ebc4-11ed-a05b-0242ac120003jj",
+      "title": "Finlandia Vodka",
+      "price": 4099,
+      "originCountry": "Germany",
+      "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
+      "subCategory": "Vodka",
+      "onStock": true,
+      "mainCategory": "Spirit",
+      "url": "https://s13emagst.akamaized.net//products/29821/29820326/images/res_8f32ba55db40602c76700256451ba707.jpg"
+    },
+    {
+      "id": "c544abfa-ebc4-11ed-a05b-0242ac120003ii",
+      "title": "Arany Fácán",
+      "price": 259,
+      "originCountry": "Hungary",
+      "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
+      "subCategory": "Lager",
+      "onStock": true,
+      "mainCategory": "Beer",
+      "url": "https://secure.ce-tescoassets.com/assets/HU/938/5998818170938/ShotType1_540x540.jpg"
+    },
+    {
+      "id": "ca932e60-ebc4-11ed-a05b-0242ac120003hh",
+      "title": "Soproni Meggy",
+      "price": 289,
+      "originCountry": "Hungary",
+      "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
+      "subCategory": "Fruit",
+      "onStock": true,
+      "mainCategory": "Beer",
+      "url": "https://secure.ce-tescoassets.com/assets/HU/895/5998818172895/ShotType1_540x540.jpg"
+    },
+    {
+      "id": "cee3d23a-ebc4-11ed-a05b-0242ac120003gg",
+      "title": "BB fehér",
+      "price": 289,
+      "originCountry": "Hungary",
+      "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
+      "subCategory": "White",
+      "onStock": true,
+      "mainCategory": "Wine",
+      "url": "https://secure.ce-tescoassets.com/assets/HU/540/5998813123540/ShotType1_540x540.jpg"
+    },
+    {
+      "title": "Mogyorós vodka",
+      "price": 2099,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "mainCategory": "Spirit",
+      "subCategory": "Vodka",
+      "originCountry": "Hungary",
+      "url": "https://www.trafikbox.hu/img/24977/408516/408516.jpg",
+      "onStock": true,
+      "id": "cdf50b2f-9d4c-45fd-94fb-126374c38bc6ff"
+    },
+    {
+      "title": "Hendrick's",
+      "price": "2099",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "mainCategory": "Spirit",
+      "subCategory": "Gin",
+      "originCountry": "England",
+      "url": "https://alkoholshop.hu/wp-content/uploads/2022/05/Hendricks-Neptunia-Gin.jpg",
+      "onStock": true,
+      "id": "45241aaa-539c-435a-bd59-047b65a531a5ee"
+    },
+    {
+      "title": "Pálinka",
+      "price": "1099",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "mainCategory": "Spirit",
+      "subCategory": "Palinka",
+      "originCountry": "Hungary",
+      "url": "https://pinterpalinka.hu/wp-content/uploads/2020/01/pinter-palinka-kajszi.png",
+      "onStock": false,
+      "id": "8843a1a6-9120-450a-94aa-bf9608d8c348dd"
+    },
+    {
+      "title": "Dreher Citrom",
+      "price": "409",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "mainCategory": "Beer",
+      "subCategory": "Fruit",
+      "originCountry": "Hungary",
+      "url": "https://secure.ce-tescoassets.com/assets/HU/421/5998817312421/ShotType1_540x540.jpg",
+      "onStock": true,
+      "id": "8843a1a6-9120-450a-94aa-bf9608d8c348cc"
+    },
+    {
+      "title": "Dankó",
+      "price": "99",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "mainCategory": "Wine",
+      "subCategory": "unknown",
+      "originCountry": "Hungary",
+      "url": "https://secure.ce-tescoassets.com/assets/HU/804/5998816750804/ShotType1_540x540.jpg",
+      "onStock": true,
+      "id": "8843a1a6-9120-450a-94aa-bf9608d8c348bb"
+    },
+    {
+      "title": "Jager",
+      "price": "1789",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "mainCategory": "Spirit",
+      "subCategory": "Liquor",
+      "originCountry": "Hungary",
+      "url": "https://p1.akcdn.net/full/395697860.jagermeister-0-7-l-35.jpg",
+      "onStock": true,
+      "id": "8843a1a6-9120-450a-94aa-bf9608d8c348aa"
+    },
+    {
+      "title": "Tokaji",
+      "price": "999",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "mainCategory": "Wine",
+      "subCategory": "White",
+      "originCountry": "Hungary",
+      "url": "https://secure.ce-tescoassets.com/assets/HU/772/5998812723772/ShotType1_540x540.jpg",
+      "onStock": true,
+      "id": "8843a1a6-9120-450a-94aa-bf9608d8c348xx",
+      "isDiscounted": false
+    },
+    {
+      "title": "Hilltop",
+      "price": "1099",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "mainCategory": "Wine",
+      "subCategory": "Rose",
+      "originCountry": "Hungary",
+      "url": "https://secure.ce-tescoassets.com/assets/HU/115/5998031101115/ShotType1_540x540.jpg",
+      "onStock": true,
+      "id": "8843a1a6-9120-450a-94aa-bf9608d8c348zz"
+    }
+  ],
+  "users": [
+    {
+      "username": "admin",
+      "email": "admin",
+      "role": "admin",
+      "hash": "$2b$11$CPl97OLYPCZqN3izAROLveY4UxhJlu29BZqCAsJNWXFZnbsSftf26"
+    },
+    {
+      "username": "Benjamin",
+      "email": "b@e.hu",
+      "hash": "$2b$11$wKN4QA.vmTiRax.JkzouQekUecrpc7ItLslJkIzEBPCc8fcAC2XNa",
+      "fullName": "Kovács Benjamin",
+      "city": "Budapest",
+      "postcode": "1188",
+      "adress": "Csörgőfa út 1"
+    }
+  ],
+  "orders": [
+    
+  ]
+}

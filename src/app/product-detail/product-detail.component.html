@@ -1,0 +1,37 @@
+<app-loader></app-loader>
+<div class="product-detail-wrapper">
+  <div class="suggested-products-container">
+    <h2>Similar products:</h2>
+    <div class="suggested-products_row">
+      <div *ngFor="let item of suggestedProducts | slice : (page - 1) * pageSize : page * pageSize">
+        <div class="suggested-product" (click)="redirectToSuggestedProduct(item.id)">
+          <img src="{{ item.url }}" alt="" />
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.price }}ft</p>
+        </div>
+      </div>
+    </div>
+    <div class="suggested-products-container__button-container">
+      <button [disabled]="page === 1" (click)="page = page - 1">
+        <img src="https://cdn-icons-png.flaticon.com/512/2722/2722991.png " alt="pagination_arrow_back" />
+      </button>
+      <button [disabled]="suggestedProducts.length <= pageSize * page" (click)="page = page + 1">
+        <img src="https://cdn-icons-png.flaticon.com/512/2989/2989988.png" alt="pagination_arrow_forward" />
+      </button>
+    </div>
+  </div>
+  <div class="product-container">
+    <div class="product-container__img-container">
+      <img src="{{ url }}" alt="" />
+      <div class="product-container__price">{{ price }}ft</div>
+    </div>
+    <div>
+      <h1>{{ title }}</h1>
+      <p>{{ mainCategory }}, {{ subCategory }}</p>
+      <p>{{ description }}</p>
+      <p>From: {{ originCountry }}</p>
+      <p class="product-container__available" *ngIf="onStock">Available</p>
+      <p class="product-container__soldout" *ngIf="!onStock">Sold out</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+@import '../../../styles/colors';
+@import '../../../styles/function';
+@import '../../../styles/mixins';
+
+.shopping-cart-container {
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    min-width: 10vw;
+
+    button {
+      @include custom-button(5px, getColor(yellow, 100), black, getColor(yellow, 200), 16px, 0.5rem 0.8rem);
+    }
+
+    button:hover {
+      @include custom-button(5px, getColor(yellow, 200), black, getColor(yellow, 200), 16px, 0.5rem 0.8rem);
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+}
+
+.cartItem-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 2rem auto auto auto;
+  padding: 1rem;
+  width: 50vw;
+  border-bottom: 1px solid getColor(gray, 200);
+
+  &_img-wrapper {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+
+    img {
+      height: 50px;
+      border-radius: 15px;
+    }
+  }
+
+  &__amount-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;
+
+    button {
+      @include custom-button(5px, white, black, black, 16px, 0.1rem 0.3rem);
+      width: 30px;
+    }
+
+    button:hover {
+      @include custom-button(5px, black, white, black, 16px, 0.1rem 0.3rem);
+    }
+  }
+}
+
+// MediaQueries
+
+@media only screen and (max-width: 600px) {
+  .cartItem-container {
+    width: 90vw;
+  }
+}

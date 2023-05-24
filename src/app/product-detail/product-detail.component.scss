@@ -1,0 +1,132 @@
+@import '../../styles/function';
+@import '../../styles/mixins';
+
+.product-detail-wrapper {
+  margin-top: 10rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.suggested-products-container {
+  h2 {
+    border-top: 2px solid getColor(gray, 200);
+    border-bottom: 2px solid getColor(gray, 200);
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  &__button-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+
+    button {
+      background-color: transparent;
+      border: none;
+    }
+
+    button img {
+      width: 15px;
+    }
+  }
+}
+
+.suggested-products_row {
+  max-width: 50vw;
+  display: flex;
+}
+
+.suggested-product {
+  text-align: center;
+  border-right: 2px solid getColor(gray, 200);
+  border-left: 2px solid getColor(gray, 200);
+  min-width: 175px;
+
+  p {
+    padding: 0.5rem;
+    margin: auto;
+    margin-bottom: 1rem;
+    width: min-content;
+    background-color: getColor(yellow, 200OP);
+    border-radius: 10px;
+  }
+
+  img {
+    height: 125px;
+  }
+}
+
+.suggested-product:hover {
+  cursor: pointer;
+  filter: grayscale(0.5);
+}
+
+.product-container {
+  width: 40vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  &__img-container {
+    position: relative;
+    min-width: 250px;
+    margin-right: 3vw;
+    display: flex;
+  }
+
+  img {
+    height: 250px;
+    margin: auto;
+  }
+
+  &__price {
+    position: absolute;
+    background-color: getColor(yellow, 200OP);
+    bottom: 0;
+    left: 8rem;
+    padding: 1rem;
+    border-radius: 160px;
+    font-weight: bold;
+  }
+
+  &__available {
+    width: max-content;
+    background-color: getColor(green, 100);
+    padding: 0.3rem 1.5rem;
+    font-weight: bold;
+  }
+
+  &__soldout {
+    width: max-content;
+    background-color: getColor(gray, 200);
+    padding: 0.3rem 1.5rem;
+  }
+}
+
+// MediaQueries
+
+@media only screen and (max-width: 1200px) {
+  .product-detail-wrapper {
+    margin-top: 1rem;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .suggested-products_row {
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .product-container {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+  }
+}

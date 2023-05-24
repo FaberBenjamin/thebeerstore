@@ -1,0 +1,147 @@
+@import '../../../styles/function';
+@import '../../../styles/mixins';
+
+.block-portal {
+  @include custom-portal();
+
+  &_card {
+    @include custom-portal-card(30vw);
+  }
+
+  button {
+    @include custom-button(8px, getColor(green, 100), black, getColor(green, 200), 16px, 0.5rem 1rem);
+    font-weight: bold;
+  }
+
+  button:hover {
+    background-color: getColor(green, 200);
+    color: white;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+}
+
+h1 {
+  font-size: 20px;
+}
+
+.product-wrapper {
+  border: 1px solid getColor(gray, 200);
+  border-radius: 15px;
+}
+
+.sold-out-wrapper {
+  filter: grayscale(1);
+}
+
+.product-container {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  justify-content: space-evenly;
+
+  &__img-container {
+    margin: auto;
+    margin-top: 2rem;
+    border: 1px solid getColor(gray, 200);
+    border-radius: 90%;
+    position: relative;
+    width: 140px;
+    min-height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img {
+    height: 125px;
+    border-radius: 50%;
+  }
+
+  &__price-generic {
+    @include custom-price(getColor(yellow, 200OP));
+  }
+
+  &__price-discounter {
+    @include custom-price(getColor(blue, 200OP));
+  }
+
+  &__price-novelty {
+    @include custom-price(getColor(red, 200OP));
+  }
+
+  &_detail-button {
+    @include custom-button(0px, white, black, white, 14px, 0rem 0rem);
+    text-decoration: underline;
+  }
+
+  &_detail-button:hover {
+    cursor: pointer;
+    font-weight: bold;
+  }
+}
+
+.button-container {
+  padding-bottom: 2rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+  h2 {
+    height: 30px;
+    font-weight: bold;
+    margin: 14px 0 14px 0;
+  }
+
+  &_add-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 90%;
+    @include custom-button(10px, black, white, getColor(gray, 400), 14px, 0.25rem 0.5rem);
+  }
+
+  &_add-button img {
+    width: 30px;
+    filter: invert(100%);
+  }
+
+  &_add-button:hover {
+    cursor: pointer;
+    font-weight: bold;
+  }
+  &_add-button:hover img {
+    width: 40px;
+  }
+}
+
+.banner-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.novelty-banner {
+  @include custom-banner(getColor(red, 200));
+}
+
+.banner {
+  @include custom-banner(getColor(yellow, 200));
+}
+
+.discounted-banner {
+  @include custom-banner(getColor(blue, 100));
+}
+
+// MediaQueries
+
+@media only screen and (max-width: 600px) {
+  .block-portal {
+    &_card {
+      width: 80vw;
+    }
+  }
+}

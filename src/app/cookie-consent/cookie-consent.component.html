@@ -1,0 +1,17 @@
+<div *ngIf="!hasConsent" class="consent-wrapper">
+  <div class="consent_container">
+    <img
+      class="cookie-img"
+      src="https://cdn-icons-png.flaticon.com/512/1772/1772807.png"
+      alt="image_cookie_illustration"
+    />
+    <div class="text-container">
+      <h1>We value your privacy!</h1>
+      <p>
+        Our webshop uses cookies to create a better user experience. To continue your journey, you agree that you have
+        read and accepted our data managing policy.
+      </p>
+      <button (click)="handleConsent()">Agree</button>
+    </div>
+  </div>
+</div>

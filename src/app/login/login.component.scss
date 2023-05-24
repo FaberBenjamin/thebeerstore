@@ -1,0 +1,64 @@
+@import '../../styles/function';
+@import '../../styles/mixins';
+
+.form-container {
+  margin: 5rem auto auto;
+  padding: 2rem 0;
+  background-color: getColor(gray, 200);
+  filter: drop-shadow(30px 10px 4px getColor(gray, 300));
+  width: max-content;
+
+  h1 {
+    text-align: center;
+    color: getColor(red, 200);
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    gap: 1rem;
+    width: 30vw;
+
+    input {
+      @include custom-input(black, 5px, 0.5rem, 16px, 50%);
+    }
+
+    label {
+      width: 50%;
+    }
+
+    span {
+      color: getColor(red, 200);
+      font-weight: bold;
+      width: 50%;
+    }
+
+    button {
+      @include custom-button(15px, white, black, black, 16px, 0.5rem 1rem);
+    }
+
+    button:hover {
+      @include custom-button(15px, black, white, black, 16px, 0.5rem 1rem);
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .form-container {
+    form {
+      width: 40vw;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .form-container {
+    form {
+      width: 80vw;
+    }
+  }
+}

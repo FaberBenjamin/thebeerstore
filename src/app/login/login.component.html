@@ -1,0 +1,13 @@
+<app-loader></app-loader>
+<div class="form-container">
+  <h1 *ngIf="errorMessage">{{ errorMessage }}!</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" action="">
+    <label for="email">Email</label>
+    <span *ngIf="emailIsRequired"> Email is required! </span>
+    <input formControlName="email" type="email" name="email" id="email" />
+    <label for="password">Password</label>
+    <span *ngIf="passwordIsRequired"> Password is required! </span>
+    <input formControlName="password" type="password" name="password" id="password" />
+    <button type="submit">Login</button>
+  </form>
+</div>
