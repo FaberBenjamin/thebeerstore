@@ -138,12 +138,11 @@ export class AdminComponent implements OnInit {
 
         let propertyName = property as keyof Product;
 
-        if (formControlValue !== null && typeof formControlValue === 'string') {
+        if (formControlValue !== null && typeof formControlValue === 'string' && formControlValue !== "false" && formControlValue !== "true") {
           formControlValue = formControlValue.slice(0, 1).toUpperCase().concat(formControlValue.slice(1));
           modifiedProduct[propertyName] = formControlValue;
-        } else if (formControlValue !== null && typeof formControlValue !== 'string') {
-          modifiedProduct[propertyName] = formControlValue;
-          console.log(modifiedProduct[propertyName]);
+        } else if (formControlValue !== null) {
+         formControlValue === "false" ? modifiedProduct[propertyName] = false : modifiedProduct[propertyName] = true
         }
       }
     }
