@@ -58,8 +58,8 @@ export class AdminComponent implements OnInit {
     subcategory: new FormControl('', { validators: Validators.required }),
     origincountry: new FormControl('', { validators: Validators.required }),
     url: new FormControl('', { validators: Validators.required }),
-    onstock: new FormControl(true),
-    isnovelty: new FormControl(false),
+    onstock: new FormControl("true"),
+    isnovelty: new FormControl("false"),
   });
 
   onSearch() {
@@ -119,8 +119,8 @@ export class AdminComponent implements OnInit {
           .toUpperCase()
           .concat(this.addProductForm.controls.origincountry.value!.slice(1)),
         url: this.addProductForm.controls.url.value!,
-        onStock: this.addProductForm.controls.onstock.value!,
-        isNovelty: this.addProductForm.controls.isnovelty.value!,
+        onStock: this.addProductForm.controls.onstock.value! === "false" ? false : true,
+        isNovelty: this.addProductForm.controls.isnovelty.value! === "false" ? false : true,
       };
       this.adminService.onAddProduct(newProduct).subscribe(() => {
         this.location.go(this.location.path());
